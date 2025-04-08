@@ -2,10 +2,19 @@
     margin-top: 1rem;
     display: flex;
     gap: 1rem;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .pages {
     display: flex;
     gap: 0.5rem;
+}
+
+.pagination-btn {
+    background-color: var(--background-white);
+    padding: 1rem;
+}
+
+.active {
+    background-color: #dcd6d6;
 }

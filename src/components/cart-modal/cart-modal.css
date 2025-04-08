@@ -1,4 +1,16 @@
 #cart-modal {
     background-color: beige;
+    padding: 3rem;
     border: 1px solid #232323;
+}
+
+.cart-modifier {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: .5rem;
+}
+
+.cart-modifier button {
+    padding: .5rem;
 }

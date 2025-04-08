@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useRef } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Home from './pages/home'
@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from './store'
 import { CartItem } from './types'
 import { CartModal } from './components/cart-modal/cart-modal'
-import { createBrowserRouter, Link, Route, RouterProvider, Routes } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
@@ -33,7 +33,7 @@ function App() {
     <div className="App">
        <header className="App-header">
         <a href="/"><img src={logo} className="App-logo" alt="logo" /></a>
-        <button ref={cartClickRef} onClick={showCart} disabled={!items.length}><i className={`fa fa-cart-shopping ${!items.length ? "cart-empty": "cart-with-products"} `} ></i></button>
+        <button ref={cartClickRef} className="cart-btn" onClick={showCart} disabled={!items.length}><i className={`fa fa-cart-shopping ${!items.length ? "cart-empty": "cart-with-products"} `} ></i></button>
         <CartModal ref={cartModalRef} />
       </header>
       <RouterProvider router={router} />

@@ -39,7 +39,6 @@ export const CartModal = forwardRef<HTMLDialogElement, Record<string, unknown>>(
     }
 
     const handleQuantityChange = (id: number, index: number, value: string) => {
-        console.log('value: ', value);
         if (isQuantityLessAvailable(index)) {
             dispatch(changeQuantity({ id, value: Number(value)}  ));
         }
@@ -61,9 +60,9 @@ export const CartModal = forwardRef<HTMLDialogElement, Record<string, unknown>>(
                     {items.length > 0 && items.map((item, index) => (
                         <li key={item.id}>
                             {item.name}
-                            <p>{item.description}</p>
-                            <div>{item.price}</div>
-                            <div>
+                            <p>Opis: {item.description}</p>
+                            <div>Cena: {item.price}zł</div>
+                            <div className="cart-modifier">
                                 <button onClick={(e) => handleDecrement(item.id, index, e)}>-</button>
                                 <input type="number" min={0} max={products[index].availableCount} value={item.quantity} onChange={(e) => handleQuantityChange(item.id, index, e.target.value)} />
                                 <button onClick={(e) => handleIncrement(item.id, index, e)} disabled={!isQuantityLessAvailable(index)}>+</button>
@@ -73,7 +72,7 @@ export const CartModal = forwardRef<HTMLDialogElement, Record<string, unknown>>(
                     ))}
                 </ul>
                 <div className="clear-cart-modal">
-                <output>Suma: {totalPrice}</output>
+                <output>Suma: {totalPrice}zł</output>
                 <button onClick={handleClearAll}>Wyczyść wszystko</button>
                 </div>
             </dialog>

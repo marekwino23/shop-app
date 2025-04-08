@@ -3,6 +3,8 @@ import { useFetchProducts } from "../useFetchProducts"
 import { Pagination } from "../components/pagination/pagination"
 import { Product } from "../components/product"
 import { ProductModal } from "../components/product-modal/product-modal"
+import { Link } from "react-router-dom"
+import './home.css';
 
 const PER_PAGE= 3;
 
@@ -23,12 +25,15 @@ const Home = () => {
       
       return(
         <div className='App-shop'>
-    {slicedData.length > 0 && slicedData.map((product, index) => (
+          <Link to="/product">Dodaj Produkt</Link>
+          <div className="grid">
+          {slicedData.length > 0 && slicedData.map((product, index) => (
       <Product key={product.id} index={index} {...product} onSetProductIndex={onSetProductIndex} />
     ))}
     <ProductModal ref={productModalRef} productPreviewIndex={productPreviewIndex} />
-    {isLoading && <div>loading...</div>}
-    <Pagination count={data.length} perPage={PER_PAGE} page={page} updatePage={updatePage} />
+    {/* {isLoading && <div>loading...</div>} */}
+          </div>
+          <Pagination count={data.length} perPage={PER_PAGE} page={page} updatePage={updatePage} />
   </div>
       )
 }

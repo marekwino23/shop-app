@@ -1,13 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { type IProduct } from '../types'
+import mockData from '../mockData'
 
 export interface ProductsState {
   data: IProduct[]
 }
 
 const initialState: ProductsState = {
-  data: [],
+  data: mockData as unknown as IProduct[]
 }
 
 export const productsSlice = createSlice({
@@ -18,13 +19,12 @@ export const productsSlice = createSlice({
         state.data.push(action.payload);
     },
     load: (state, action: PayloadAction<IProduct[]>) => {
-      console.log('payload: ', state, action.payload);
-      state.data.push(...action.payload);
+      // state.data = [...state.data, ...action.payload];
     },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { add, load } = productsSlice.actions
+export const { add, load} = productsSlice.actions
 
 export default productsSlice.reducer

@@ -1,7 +1,7 @@
-import { MouseEventHandler, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../store"
-import { CartItem, type IProduct } from "../types"
+import { type IProduct } from "../types"
 
 interface ProductProps extends IProduct {
     index?: number
@@ -29,7 +29,7 @@ export const Product = ({ id, name, description, availableCount, price, image, i
           <h3>Produkt: {name}</h3>
           <p><b>Opis:</b> {description}</p>
           <span><b>Cena: </b>{price}zł</span>
-          <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'baseline' }}>
             <input type="number" onChange={handleChange} min={0} max={products[index].availableCount} defaultValue={1} ref={quantityRef} /><button className="btn-add-cart" onClick={handleAddProduct}>Dodaj do koszyka<img width={20} height={20} src="https://marekxd.publit.io/file/bag-18827632.png"/></button>
           </div>
           <output>Ilość towaru na magazynie: {availableCount - quantity}</output>

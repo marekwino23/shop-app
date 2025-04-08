@@ -1,0 +1,10 @@
+.grid {
+    background-color: var(--background-white);
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    gap:50px 144px;
+    grid: auto/ auto auto auto;
+    min-height: 50vh;
+    margin: 3rem 0
+  }

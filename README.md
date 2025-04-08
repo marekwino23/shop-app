@@ -57,3 +57,12 @@ name - your choosen file name.
 4. Dodanie mkcert do PATH w zmiennych środowiskowych.
 5. Uruchom polecenie mkcert-install w cmd jako admin bo znalezieniu lokalizacji pliku.
 6. Uruchom polecenie mkcert name(nazwa pliku) w folderze projektu.
+7. Stwórz plik .env w głównym katalogu bezpośrednio i wypełnij na podstawie podanego .env.example wypełaniając wartości dla podanych kluczy.
+
+np.
+
+HOST=shop.local
+HTTPS=true
+PORT=443
+SSL_CRT_FILE=shop.local.pem
+SSL_KEY_FILE=shop.local-key.pem

@@ -13,9 +13,12 @@ const fakeFetchData = () => {
 
 export const useFetchProducts = () => {
     const [isLoading, setLoading] = useState(true);
-    const data = useSelector<RootState>(store => store.products.data);
+    const data = useSelector<RootState>(store => store.products.data) as IProduct[];
     const dispatch = useDispatch();
     useEffect(() => {
+        if (data.length ===mockData.length) {
+            return;
+        }
         fakeFetchData()
             .then(mockData => {
                 dispatch(load(mockData as IProduct[]))

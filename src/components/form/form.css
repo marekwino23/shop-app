@@ -1,0 +1,36 @@
+.product-form-container{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.product-form {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid black;
+    padding: 2rem 3rem 3rem;
+} 
+
+
+.product-form-label {
+    display: flex;
+    flex-flow: column;
+    align-items: baseline;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem 0.2rem;
+    margin-top: 0.2rem;
+}
+
+.product-form-btn {
+    padding: 1rem 0.5rem;
+    margin-top: 20px;
+}
