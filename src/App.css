@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -14,14 +14,76 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  max-width: 1428px;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
+}
+
+.shop-product{
+  display: flex;
+  flex-flow: column;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.product-form-btn{
+  margin-top: 20px;
+}
+
+.product-form-container{
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+
+.product-form{
+  display: flex;
+  flex-flow: column;
+}
+
+.product-form-label{
+  display: flex;
+  flex-flow: column;
+  align-items: baseline;
+}
+
+.cart.empty{
+  color: black;
+}
+
+.cart-with-products{
+  color:red
+}
+
+.clear-cart-modal{
+  display: flex;
+  flex-flow: column;
+  gap:10px
+}
+
+.btn-add-cart{
+  margin-top: 20px;
+  padding: 0.5rem;
+  background-color: transparent;
+  display: flex;
+  cursor: pointer;
+  flex-flow: row;
+  align-items: center;
+  gap: 10px;
+}
+.App-shop{
+  background-color: white;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  gap:50px 144px;
+  grid: auto/ auto auto auto;
+  min-height: 50vh;
 }
 
 .App-link {

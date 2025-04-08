@@ -44,3 +44,16 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## To use https on development server you have to use mkcert and please follow steps below:
+
+for SSL_CRT_FILE please use [name].local.pem
+for SSL_CRT_FILE please use [name].local-key.pem
+name - your choosen file name.
+
+1. Windows: Uruchom notatnik jako administrator i edytuj:C:\Windows\System32\drivers\etc\hosts
+2. Dodaj linie : 127.0.0.1 shop.local
+3. Pobierz mkcert
+4. Dodanie mkcert do PATH w zmiennych środowiskowych.
+5. Uruchom polecenie mkcert-install w cmd jako admin bo znalezieniu lokalizacji pliku.
+6. Uruchom polecenie mkcert name(nazwa pliku) w folderze projektu.
